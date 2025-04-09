@@ -1,5 +1,3 @@
--- Version modifiée du script Lua pour refléter les changements de structure du script Python
-
 hg = require("harfang")
 
 function CreatePhysicCubeEx(scene, size, mtx, model_ref, materials, rb_type, mass)
@@ -30,7 +28,7 @@ end
 function CreateAnchors(nodes, joint_paths)
 	local anchors = {}
 	for _, path in ipairs(joint_paths) do
-		local key = path .. "_anchor"
+		local key = path .. "_anchor"   
 		anchors[key] = hg.TransformationMat4(nodes[path]:GetTransform():GetPos(), nodes[path]:GetTransform():GetRot())
 	end
 	return anchors
